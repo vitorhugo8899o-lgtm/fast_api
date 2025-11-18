@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV POETRY_VIRTUALENVS_CREATE=false
 ENV POETRY_NO_INTERACTION=1
-ENV PATH="/root/.local/bin:$PATH" # Adiciona Poetry ao PATH
+ENV PATH="/root/.local/bin:$PATH" 
 
 WORKDIR /app
 

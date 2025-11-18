@@ -13,4 +13,4 @@ RUN poetry install --no-interaction --no-ansi --without dev
 
 EXPOSE 8000
 
-CMD ["sh",  "alembic upgrade head && uvicorn fast_api.app:app --host 0.0.0.0 --port 8000"]
+CMD ["sh", "-c", "alembic upgrade head && uvicorn fast_api.app:app --host 0.0.0.0 --port 8000"]

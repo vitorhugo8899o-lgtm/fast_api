@@ -3,45 +3,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from fast_api.database.models import Product, User
 from fast_api.expections.expect import (
-    EmailAlreadyExistsError,
     ProductNotFound,
-    UserNameAlreadyExistsError,
     UserNotAdm,
     UserNotFound,
 )
 from fast_api.Schemas.Schema import (
     OrderRequest,
     ProductSchema,
-    UserAdm,
 )
-from fast_api.services.user_services import hash_password
-
-
-async def create_adm(db: AsyncSession, user_data: UserAdm) -> User:
-
-    condition = (User.username == user_data.username) | (
-        User.email == user_data.email
-    )
-
-    found_user = await db.scalar(select(User).where(condition))
-
-    if found_user:
-        if found_user.email == user_data.email:
-            raise EmailAlreadyExistsError
-        elif found_user.username == user_data.username:
-            raise UserNameAlreadyExistsError
-
-    new_user = User(
-        username=user_data.username,
-        fullname=user_data.fullname,
-        email=user_data.email,
-        password=hash_password(user_data.password),
-        adm=user_data.adm,
-    )
-    db.add(new_user)
-    await db.commit()
-    await db.refresh(new_user)
-    return new_user
 
 
 async def found_user_adm(db: AsyncSession, user_data: User) -> bool:

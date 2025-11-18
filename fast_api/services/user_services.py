@@ -179,6 +179,3 @@ async def search_for_order(db: AsyncSession, order: OrderDelete):
         raise OrderNotFound
 
     return order_found
-
-
-

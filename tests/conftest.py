@@ -17,8 +17,6 @@ from fast_api.services.user_services import (
 )
 
 
-
-
 @pytest.fixture
 def client(session):
     def get_session_override():

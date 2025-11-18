@@ -12,12 +12,9 @@ from fast_api.expections.expect import (
 from fast_api.Schemas.Schema import (
     Message,
     ProductSchema,
-    UserAdm,
-    UserPublic,
 )
 from fast_api.services.master_services import (
     add_products,
-    create_adm,
     found_user_adm,
     search_product_delete,
 )
@@ -28,16 +25,6 @@ from fast_api.services.user_services import (
 routh_master = APIRouter(prefix='/master', tags=['Adms'])
 Db = Annotated[AsyncSession, Depends(create_session)]
 CurrentUser = Annotated[User, Depends(get_current_user)]
-
-
-@routh_master.post(
-    '/create_manager',
-    status_code=HTTPStatus.CREATED,
-    response_model=UserPublic,
-)
-async def create_account_manager(db: Db, user: UserAdm):
-
-    return await create_adm(db=db, user_data=user)
 
 
 @routh_master.post(

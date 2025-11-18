@@ -17,14 +17,6 @@ class UserRegistration(BaseModel):
     password: str
 
 
-class UserAdm(BaseModel):
-    username: str
-    fullname: str
-    email: EmailStr
-    password: str
-    adm: bool
-
-
 class UserPublic(BaseModel):
     id: int
     username: str

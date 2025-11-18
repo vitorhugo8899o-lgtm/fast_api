@@ -15,7 +15,7 @@ if platform.system() == "Windows":
     if sys.version_info >= (3, 8) and sys.platform == "win32":
         from asyncio.windows_events import WindowsSelectorEventLoopPolicy
         asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())
-        print("Política de Event Loop do Windows aplicada com sucesso.")
+        
 
 
 app = FastAPI(title='E-commerce', version='1.0.0')

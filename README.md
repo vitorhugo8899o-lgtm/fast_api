@@ -27,39 +27,3 @@ Funcionalidades da API:
     * `DELETE /`: Atualizar um produto específico (funcionalidade exclusiva dos usuários adiministrativos).
     * `GET /get_product`: Listar todos os produtos (Não é necessario está logado para ver a lista).
 
-
-📂 Estrutura de Diretórios do Projeto
-.
-├── fast_api/
-│   ├── api/
-│   │   ├── v1/
-│   │   │   ├── endpoints/
-│   │   │   │   ├── auth_route.py
-│   │   │   │   ├── master_route.py
-│   │   │   │   ├── order_route.py
-│   │   │   │   └── users_route.py
-│   │   └── __init__.py
-│   ├── core/
-│   │   └── settings.py
-│   ├── database/
-│   │   ├── models.py
-│   │   └── depends.py
-│   ├── exceptions/
-│   │   └── expect.py
-│   ├── schemas/
-│   │   ├── custom_schema.py
-│   │   └── schemas.py
-│   ├── services/
-│   │   ├── master_services.py
-│   │   └── user_services.py
-│   └── app.py
-├── migrations/
-├── script/
-├── tests/
-├── .gitignore
-├── pyproject.toml
-├── Dockerfile
-└── compose.yaml
-
-
-

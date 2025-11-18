@@ -1,6 +1,6 @@
 # API RESTful de E-commerce
 
-sta é uma API RESTful completa desenvolvida em **Python** utilizando o framework **FastAPI**. O projeto simula a estrutura básica de um backend de **E-commerce**, gerenciando produtos, usuários e pedidos. O deploy está ativo no **Render**.
+Esta é uma API RESTful completa desenvolvida em **Python** utilizando o framework **FastAPI**. O projeto simula a estrutura básica de um backend de **E-commerce**, gerenciando produtos, usuários e pedidos. O deploy está ativo no **Render**.
 
 [![Status do Deploy](https://img.shields.io/badge/Deploy-Online-success?style=for-the-badge)](https://fast-api-k9as.onrender.com)
 
@@ -63,3 +63,4 @@ Funcionalidades da API:
 ├── poetry
 ├── Dockerfile
 └── compose.yaml
+

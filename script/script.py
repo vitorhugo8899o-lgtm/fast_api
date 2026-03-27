@@ -1,5 +1,5 @@
-import requests
 import factory
+import requests
 
 
 class UserFactory(factory.Factory):
@@ -9,7 +9,6 @@ class UserFactory(factory.Factory):
     username = factory.Sequence(lambda n: f'test{n}')
     email = factory.LazyAttribute(lambda obj: f"{obj.username}@test.com")
     password = factory.Sequence(lambda n: f"@test{n}")
-
 
 
 for _ in range(1000):
@@ -23,7 +22,7 @@ for _ in range(1000):
     print(resp.status_code)
     try:
         print(resp.json())
-    except:
+    except:  # noqa: E722
         print(resp.text)
 
     login = requests.post(
@@ -37,5 +36,5 @@ for _ in range(1000):
     print(resp.status_code)
     try:
         print(resp.json())
-    except:
+    except:  # noqa: E722
         print(resp.text)
